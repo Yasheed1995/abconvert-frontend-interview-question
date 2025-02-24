@@ -1,25 +1,5 @@
 import ProductCard from "@/components/ProductCard";
-
-const products = [
-  {
-    id: 1,
-    title: "Elegant Brown Coat",
-    imageSrc: "/images/00088-845072580.png",
-    price: "$129.99"
-  },
-  {
-    id: 2,
-    title: "Luxury Red Blazer",
-    imageSrc: "/images/00117-1631775000.png",
-    price: "$149.99"
-  },
-  {
-    id: 3,
-    title: "Bright Orange Suit",
-    imageSrc: "/images/00450-3026690992.png",
-    price: "$139.99"
-  }
-];
+import { products } from "@/data/products";
 
 const ProductsPage = () => {
   return (
@@ -29,6 +9,7 @@ const ProductsPage = () => {
         {products.map((product) => (
           <ProductCard 
             key={product.id} 
+            id={product.id}
             imageSrc={product.imageSrc} 
             title={product.title} 
             price={product.price} 
