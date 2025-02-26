@@ -4,17 +4,17 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 
 interface ProductDetailPageProps {
-  params: { productId: string };
+  params: { id: string };
 }
 
 const ProductDetailPage: React.FC<ProductDetailPageProps> = async ({
   params,
 }) => {
-  const { productId } = params;
+  const { id } = params;
 
   // Find the product with the matching ID
   const products = await getProducts();
-  const product = products.find((p) => p.id === productId);
+  const product = products.find((p) => p.id === id);
 
   if (!product) {
     // Handle the case where the product is not found
@@ -102,7 +102,7 @@ const ProductDetailPage: React.FC<ProductDetailPageProps> = async ({
             </h1>
             <div className="relative w-full h-96 mb-6">
               <Image
-                src={`/${product.image}`}
+                src={product.image}
                 alt={product.name}
                 layout="fill"
                 objectFit="contain"
