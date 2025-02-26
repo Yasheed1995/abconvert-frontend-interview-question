@@ -88,9 +88,9 @@ const ProductsPage = async () => {
               <ProductCard
                 key={product.id}
                 id={product.id}
-                imageSrc={`/${product.image}`} // Corrected image path
-                title={product.name} // Corrected title prop
-                price={product.price.toString()} // Corrected price prop
+                imageSrc={product.image} // Remove the `/` here
+                title={product.name}
+                price={product.price.toString()}
               />
             ))}
           </div>

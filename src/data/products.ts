@@ -21,6 +21,7 @@ const getProducts = async (): Promise<Product[]> => {
     return productsData.map((product, index) => ({
       ...product,
       id: `product-${index + 1}`,
+      image: `/assets/images/${product.image}`, // Add the prefix to the path here
     }));
   } catch (error) {
     console.error("Failed to fetch products:", error);
